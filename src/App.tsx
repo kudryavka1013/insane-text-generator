@@ -4,10 +4,11 @@ function App() {
   return (
     <div>
       <header>
-        <p>
+        <div className="bg-blue-100 underline">
           insane-text-generator
-        </p>
+        </div>
       </header>
+      
     </div>
   );
 }
