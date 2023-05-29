@@ -1,15 +1,12 @@
 import React from "react";
+import { Title } from "./Components/Title";
+import { Wrapper } from "./Components/Wrapper";
 
 function App() {
   return (
-    <div>
-      <header>
-        <div className="bg-blue-100 underline">
-          insane-text-generator
-        </div>
-      </header>
-      
-    </div>
+    <Wrapper>
+      <Title />
+    </Wrapper>
   );
 }
 
