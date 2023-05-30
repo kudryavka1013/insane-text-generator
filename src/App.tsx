@@ -1,12 +1,21 @@
 import React from "react";
+import { CommonWords } from "./Components/CommonWords";
+import { Editor } from "./Components/Editor";
+import { HistoryList } from "./Components/HistoryList";
 import { Title } from "./Components/Title";
-import { Wrapper } from "./Components/Wrapper";
 
 function App() {
   return (
-    <Wrapper>
+    <div className="p-10 h-screen bg-sky-200">
       <Title />
-    </Wrapper>
+      <div className="flex">
+        <Editor />
+        <div>
+          <CommonWords />
+          <HistoryList />
+        </div>
+      </div>
+    </div>
   );
 }
 
