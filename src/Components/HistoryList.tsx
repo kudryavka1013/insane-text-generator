@@ -3,8 +3,7 @@ import { Card } from "./Card"
 
 export const HistoryList = () => {
   return (
-    <Card>
-      HistoryList
+    <Card title="历史">
     </Card>
   )
 }

@@ -3,8 +3,7 @@ import { Card } from "./Card"
 
 export const CommonWords = () => {
   return (
-    <Card>
-      CommonWords
+    <Card title="常用">
     </Card>
   )
 }

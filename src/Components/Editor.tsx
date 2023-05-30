@@ -7,13 +7,13 @@ export const Editor = () => {
     <Card>
       <Config />
       <div className="flex mt-8">
-        <input type="text" />
-        <button>输入</button>
+        <input type="text" placeholder="输入文本，按下回车"/>
+        <button>生成</button>
       </div>
       <div className="flex">
-        <textarea></textarea>
+        <textarea placeholder="输出内容"></textarea>
         <div className="flex-col">
-          <button className="block">复制到剪贴板</button>
+          <button className="block">复制</button>
           <button className="block">清空</button>
           {/* <button className="block">替换</button> */}
         </div>
