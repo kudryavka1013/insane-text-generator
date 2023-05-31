@@ -3,14 +3,22 @@ export const enum LabelType {
   fw = '全'
 }
 
-export const labels: { name: string, type: LabelType }[] = [
-  { name: '（ ）', type: LabelType.fw },
-  { name: '( )', type: LabelType.hw },
-  { name: '[ ]', type: LabelType.hw },
-  { name: '{ }', type: LabelType.hw },
-  { name: '< >', type: LabelType.hw },
-  { name: '【 】', type: LabelType.fw },
-  { name: '《 》', type: LabelType.fw }
+export interface Label {
+  left: string
+  right: string
+  type: LabelType
+}
+
+export const labels: Label[] = [
+  { left: '（', right: '）', type: LabelType.fw },
+  { left: '(', right: ')', type: LabelType.hw },
+  { left: '[', right: ']', type: LabelType.hw },
+  { left: '{', right: '}', type: LabelType.hw },
+  { left: '<', right: '>', type: LabelType.hw },
+  { left: '【', right: '】', type: LabelType.fw },
+  { left: '《', right: '》', type: LabelType.fw },
+  { left: '“', right: '”', type: LabelType.fw },
+  { left: '"', right: '"', type: LabelType.hw },
 ]
 
 export const commonWords: string[] = []
