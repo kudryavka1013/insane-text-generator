@@ -14,7 +14,7 @@ export const Config = (props: any) => {
             <RadioGroup.Option
               key={item.left + item.right}
               value={item}
-              className={({ checked }) => `${checked ? 'bg-sky-900 bg-opacity-75 text-white' : 'bg-white'} basis-16 relative cursor-pointer rounded-lg px-2 py-2 shadow-md`}>
+              className={({ checked }) => `${checked ? 'bg-indigo-500 text-white' : 'bg-white'} basis-16 relative cursor-pointer rounded-lg px-2 py-2 shadow-md`}>
               {({ checked }) => (
                 <>
                   <span className="block text-center">{`${item.left} ${item.right}`}</span>
