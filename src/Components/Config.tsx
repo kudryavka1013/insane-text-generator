@@ -9,7 +9,6 @@ export const Config = (props: any) => {
   return (
     <div>
       <RadioGroup value={config} onChange={setConfig}>
-        <RadioGroup.Label className="sr-only">括号设置</RadioGroup.Label>
         <div className="flex flex-wrap gap-4">
           {labels.map(item => (
             <RadioGroup.Option
