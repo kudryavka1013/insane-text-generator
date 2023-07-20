@@ -9,7 +9,7 @@ function App() {
   const [config, setConfig] = useState<Label>(labels[0])
 
   return (
-    <div className="p-10 min-h-screen bg-sky-100">
+    <div className="p-10 min-h-screen bg-sky-100 max-sm:p-5">
       <Title />
       <div className="flex gap-4 max-w-screen-lg max-[995px]:flex-col">
         <div className="flex-[2]">

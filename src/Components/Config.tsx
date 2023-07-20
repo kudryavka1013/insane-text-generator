@@ -18,9 +18,11 @@ export const Config = (props: any) => {
               {({ checked }) => (
                 <>
                   <span className="block text-center">{`${item.left} ${item.right}`}</span>
-                  <div className={`${checked ? 'text-slate-50' : 'text-slate-400'} absolute right-0.5 bottom-0.5 text-xs font-light`}>
-                    {item.type}
-                  </div>
+                  {item.type &&
+                    <div className={`${checked ? 'text-slate-50' : 'text-slate-400'} absolute right-0.5 bottom-0.5 text-xs font-light`}>
+                      {item.type}
+                    </div>
+                  }
                 </>
               )}
             </RadioGroup.Option>

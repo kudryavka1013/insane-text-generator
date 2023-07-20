@@ -31,13 +31,17 @@ export const Editor = (props: any) => {
     setTextarea('')
   }
 
-  const onCopy = async () => {
+  const onCopy = async (e) => {
     try {
-      if (navigator.clipboard) {
+      // Navigator clipboard api needs a secure context (https)
+      if (navigator.clipboard && window.isSecureContext) {
         await navigator.clipboard.writeText(textarea);
+      } else {
+        (document.getElementById('output-textarea') as HTMLTextAreaElement).select()
+        document.execCommand('copy')
       }
     } catch (e) {
-      console.error(e)
+      console.error('clipboard not support')
     }
   }
 
@@ -52,7 +56,7 @@ export const Editor = (props: any) => {
           onKeyDown={onKeyUp}
           autoFocus
           placeholder="输入文本，按下回车"
-          className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out selection:bg-sky-900/75 selection:text-white" />
+          className="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out selection:bg-sky-600/75 selection:text-white" />
         <button className="shrink-0 inline-block btn" onClick={onEnter}>生成</button>
       </div>
       <div className="flex gap-4">
@@ -61,7 +65,8 @@ export const Editor = (props: any) => {
           onChange={onTextareaChange}
           placeholder="输出内容"
           rows={4}
-          className="min-h-[6rem] w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out selection:bg-sky-900/75 selection:text-white"></textarea>
+          id="output-textarea"
+          className="min-h-[6rem] w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out selection:bg-sky-600/75 selection:text-white"></textarea>
         <div className="flex-col shrink-0">
           <button className="relative group mb-4 block btn" onClick={onCopy}>
             <div className="group-active:duration-0 group-active:delay-0 group-active:opacity-0 opacity-100 duration-500 delay-1000 ease-in" >

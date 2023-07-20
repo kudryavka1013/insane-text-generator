@@ -6,7 +6,7 @@ export const enum LabelType {
 export interface Label {
   left: string
   right: string
-  type: LabelType
+  type?: LabelType
 }
 
 export const labels: Label[] = [
@@ -19,6 +19,8 @@ export const labels: Label[] = [
   { left: '《', right: '》', type: LabelType.fw },
   { left: '“', right: '”', type: LabelType.fw },
   { left: '"', right: '"', type: LabelType.hw },
+  { left: '†', right: '†' },
+  { left: '⏚', right: '⏚' }
 ]
 
 export const commonWords: string[] = []
